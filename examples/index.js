@@ -13,7 +13,7 @@ var data,
 // Plain arrays...
 data = new Array( 10 );
 for ( i = 0; i < data.length; i++ ) {
-	data[ i ] = i * 0.5;
+	data[ i ] = i / 10;
 }
 out = mgf( data );
 console.log( 'Arrays: %s\n', out );
@@ -55,7 +55,7 @@ console.log( '\n' );
 // Typed arrays...
 data = new Float32Array( 10 );
 for ( i = 0; i < data.length; i++ ) {
-	data[ i ] = i * 0.5;
+	data[ i ] = i / 10;
 }
 tmp = mgf( data );
 out = '';

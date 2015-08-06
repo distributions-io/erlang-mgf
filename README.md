@@ -4,7 +4,7 @@ Moment-Generating Function
 
 > [Erlang](https://en.wikipedia.org/wiki/Erlang_distribution) distribution moment-generating function (MGF).
 
-The [moment-generating function](https://en.wikipedia.org/wiki/Moment-generating_function) for a [Erlang](https://en.wikipedia.org/wiki/Erlang_distribution) random variable is
+The [moment-generating function](https://en.wikipedia.org/wiki/Moment-generating_function) for an [Erlang](https://en.wikipedia.org/wiki/Erlang_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="
 	M_X(t) := \mathbb{E}\!\left[e^{tX}\right] =  \left(1 \,-\, \frac{t}{\lambda}\right)^{-k}" data-equation="eq:mgf_function">
@@ -83,7 +83,7 @@ The function accepts the following `options`:
 *	__path__: [deepget](https://github.com/kgryte/utils-deep-get)/[deepset](https://github.com/kgryte/utils-deep-set) key path.
 *	__sep__: [deepget](https://github.com/kgryte/utils-deep-get)/[deepset](https://github.com/kgryte/utils-deep-set) key path separator. Default: `'.'`.
 
-A [Erlang](https://en.wikipedia.org/wiki/Erlang_distribution) distribution is a function of 2 parameter(s): `k`(shape parameter) and `lambda`(rate parameter). By default, `k` is equal to `1` and `lambda` is equal to `1`. To adjust either parameter, set the corresponding option(s).
+An [Erlang](https://en.wikipedia.org/wiki/Erlang_distribution) distribution is a function of two parameters: `k`(shape parameter) and `lambda`(rate parameter). By default, `k` is equal to `1` and `lambda` is equal to `1`. To adjust either parameter, set the corresponding option.
 
 ``` javascript
 var t = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
@@ -284,7 +284,7 @@ var data,
 // Plain arrays...
 data = new Array( 10 );
 for ( i = 0; i < data.length; i++ ) {
-	data[ i ] = i * 0.5;
+	data[ i ] = i / 10;
 }
 out = mgf( data );
 
@@ -315,7 +315,7 @@ out = mgf( data, {
 // Typed arrays...
 data = new Float32Array( 10 );
 for ( i = 0; i < data.length; i++ ) {
-	data[ i ] = i * 0.5;
+	data[ i ] = i / 10;
 }
 out = mgf( data );
 
