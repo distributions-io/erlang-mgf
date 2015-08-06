@@ -1,11 +1,11 @@
 using Distributions
 using JSON
 
-k = 1
-lambda = 1
-d = Erlang( k,lambda )
+k = 3
+lambda = 2.5
+d = Erlang( k, 1/lambda )
 
-x = linspace( .5, -100, 100 )
+x = linspace( .5, -100, 200 )
 
 dmgf(t) = mgf(d, t )
 y = map( dmgf, x )

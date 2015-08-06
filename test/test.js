@@ -132,15 +132,13 @@ describe( 'distributions-erlang-mgf', function tests() {
 			data = validationData.data,
 			expected = validationData.expected.map( function( d ) {
 				return d === 'Inf' ? Infinity : d;
-			}),
-			k = validationData.k,
-		lambda = validationData.lambda;
+			});
 
 			var actual;
 			for ( var i = 0; i < data.length; i++ ) {
 				actual =  mgf( data[ i ], {
 					'k': validationData.k,
-		'lambda': validationData.lambda
+					'lambda': validationData.lambda
 				});
 				if ( isFiniteNumber( actual ) && isFiniteNumber( expected[ i ] ) ) {
 					assert.closeTo( actual, expected[ i ] , 1e-14 );
@@ -164,7 +162,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 
 		actual = mgf( data, {
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
 		assert.notEqual( actual, data );
 
@@ -195,7 +193,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 			expected,
 			i;
 
-		data = new Float32Array( validationData.data );
+		data = new Float64Array( validationData.data );
 
 		expected = new Float64Array( validationData.expected.map( function( d ) {
 			return d === 'Inf' ? Infinity : d;
@@ -203,7 +201,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 
 		actual = mgf( data, {
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
 		assert.notEqual( actual, data );
 
@@ -217,9 +215,9 @@ describe( 'distributions-erlang-mgf', function tests() {
 		actual = mgf( data, {
 			'copy': false,
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
-		expected = new Float32Array( validationData.expected.map( function( d ) {
+		expected = new Float64Array( validationData.expected.map( function( d ) {
 			return d === 'Inf' ? Infinity : d;
 		}) );
 		assert.strictEqual( actual, data );
@@ -247,7 +245,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 		actual = mgf( data, {
 			'dtype': 'float32',
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
 
 		assert.notEqual( actual, data );
@@ -278,7 +276,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 		actual = mgf( data, {
 			'accessor': getValue,
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
 		assert.notEqual( actual, data );
 
@@ -322,7 +320,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 		actual = mgf( data, {
 			'path': 'x.1',
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
 
 		expected = validationData.expected
@@ -376,7 +374,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 		mat = matrix( d1, [5,5], 'float64' );
 		out = mgf( mat, {
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
 
 		for ( i = 0; i < out.length; i++ ) {
@@ -389,7 +387,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 		out = mgf( mat, {
 			'copy': false,
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
 		assert.strictEqual( mat, out );
 
@@ -415,7 +413,7 @@ describe( 'distributions-erlang-mgf', function tests() {
 		out = mgf( mat, {
 			'dtype': 'float32',
 			'k': validationData.k,
-		'lambda': validationData.lambda
+			'lambda': validationData.lambda
 		});
 
 		assert.strictEqual( out.dtype, 'float32' );

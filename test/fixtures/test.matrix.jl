@@ -2,8 +2,8 @@ using Distributions
 using JSON
 
 k = 1
-lambda = 1
-d = Erlang( k,lambda )
+lambda = 26
+d = Erlang( k, 1/lambda )
 
 x = linspace( 1, 0, 25 )
 

@@ -1,9 +1,9 @@
 using Distributions
 using JSON
 
-k = 1
-lambda = 1
-d = Erlang( k,lambda )
+k = 9
+lambda = 23
+d = Erlang( k, 1/lambda )
 
 x = [ -5, -2.5, 0, 2.5, 5 ]
 

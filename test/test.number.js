@@ -48,6 +48,11 @@ describe( 'number mgf', function tests() {
 		}
 	});
 
+	it( 'should return `NaN` when `t >= lambda`', function test() {
+		// Case: lambda = 23;
+		assert.isTrue( isnan( mgf( 25, k, lambda ) ) );
+	});
+
 	it( 'should return `NaN` if provided `NaN` as input', function test() {
 		assert.isTrue( isnan( mgf( NaN, k, lambda ) ) );
 	});
